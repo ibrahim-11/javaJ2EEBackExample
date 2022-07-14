@@ -14,7 +14,7 @@ public class Product implements Serializable {
     @Column(name = "id", nullable = false)
     private Integer id;
 // Dire à JPA que le champ "nom" est mappé sur une colonne nommée "nom" dans la base de données.
-    @Column(name="nom")
+    @Column(name="name")
     private String name;
     @Column(name="description")
     private String description;
@@ -25,9 +25,9 @@ public class Product implements Serializable {
     }
 
 // Un constructeur.
-    public Product(Integer id, String nom, String description, Integer prix) {
+    public Product(Integer id, String name, String description, Integer prix) {
         this.id = id;
-        this.name = nom;
+        this.name = name;
         this.description = description;
         this.prix = prix;
     }
