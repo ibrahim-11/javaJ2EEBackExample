@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.1</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.homdemo</groupId>
+	<artifactId>homdemo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>chopdemo</name>
+	<description>springhomchopdemo</description>
+	<properties>
+		<java.version>18</java.version>
+
+		<sonar.login>squ_d9566a65f077e5a00614cf4d3cce2604cc25cb9c</sonar.login>
+
+
+		<!--
+        <sonar.host.url>http://ns3138771.ip-94-23-10.eu/sonar</sonar.host.url> -->
+
+		<!-- En mode local
+        <sonar.login>admin</sonar.login>
+        <sonar.password>bonjour</sonar.password>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+        -->
+
+		<sonar.scm.provider>git</sonar.scm.provider>
+		<!-- A effacer si besoin -->
+		<sonar.scm.disabled>true</sonar.scm.disabled>
+		<!-- Information portentiellement importante,
+             sinon Sonar prend la version Maven = version du Spring Boot
+        -->
+		<sonar.projectVersion>1.0.0</sonar.projectVersion>
+
+		<sonar.sourceEncoding>${project.build.sourceEncoding}</sonar.sourceEncoding>
+		<sonar.language>java</sonar.language>
+		<sonar.java.source>${java.version}</sonar.java.source>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                </configuration>
+            </plugin>
+        </plugins>
+	</build>
+
+</project>
