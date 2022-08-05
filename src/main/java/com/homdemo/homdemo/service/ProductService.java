@@ -76,7 +76,7 @@ public class ProductService {
  */
     public Product delete(Integer id){
         if(!this.productRepo.existsById(id)){
-            throw  new ResponseStatusException(HttpStatus.NOT_FOUND,"impossible de trouver la guitar a suprimer");
+            throw  new ResponseStatusException(HttpStatus.NOT_FOUND,"impossible de trouver le produit a suprimer");
         }
         Product productdelet = this.findById(id);
         this.productRepo.deleteById(id);
